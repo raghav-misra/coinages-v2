@@ -2,6 +2,7 @@
     --back: rgb(36, 43, 56);
     --fore: white;
     --accent: cornflowerblue;
+    --success: rgb(23, 172, 23);
     --danger: rgb(201, 56, 56);
 }
 
@@ -15,11 +16,20 @@ html { font-size: 18px; }
     text-align: center;
 }
 
-html, body {
+html, body, #app {
     margin: 0;
     width: 100%;
     height: 100%;
     background: var(--back);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#app > #current-view {
+    flex: 1;
+    margin: 0;
+    padding: 0;
 }
 
 div, header, footer, section, nav {
@@ -27,8 +37,15 @@ div, header, footer, section, nav {
     margin: 0;
 }
 
-.mono { font-family: monospace; }
+.mono { font-family: "Fira Code"; }
 
 .no-padding { padding: 0; }
-
 .no-margin { margin: 0; }
+
+.font-weight-reg { font-weight: 400; }
+.font-weight-bold { font-weight: 700; }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }

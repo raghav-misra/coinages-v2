@@ -11,7 +11,7 @@ html { font-size: 18px; }
     margin: 0.5rem;
     padding: 0;
     color: var(--fore);
-    font-family: "Roboto", "Segoe UI", sans-serif;
+    font-family: "Raleway", "Roboto", "Segoe UI", sans-serif;
     text-align: center;
 }
 
@@ -27,11 +27,8 @@ div, header, footer, section, nav {
     margin: 0;
 }
 
+.mono { font-family: monospace; }
 
-.no-padding {
-    padding: 0;
-}
+.no-padding { padding: 0; }
 
-.no-margin {
-    margin: 0;
-}
+.no-margin { margin: 0; }

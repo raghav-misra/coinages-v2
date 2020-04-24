@@ -1,6 +1,7 @@
 <template>
     <div class="no-padding">
         <NavBar />
+
         <router-view />
     </div>
 </template>
@@ -14,5 +15,5 @@ export default Vue.extend({
 });
 </script>
 
-<style src="@/assets/reset.css"></style>
+<style src="@/assets/css/reset.css"></style>
 

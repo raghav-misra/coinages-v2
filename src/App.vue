@@ -19,6 +19,9 @@
             </h3>
         </header> 
 
+        <!-- Home Button -->
+        <HomeButton />
+
         <!-- Current Page -->
         <div id="current-view">
             <transition name="slide">
@@ -31,13 +34,16 @@
 <script lang="ts">
 import Vue from "vue";
 
+import HomeButton from "@/components/HomeButton.vue";
+
 export default Vue.extend({
     computed: {
         money() { return this.$store.state.money / 100; }
     },
     methods: {
         profit() { this.$store.commit("profit"); }
-    }
+    },
+    components: { HomeButton }
 });
 </script>
 

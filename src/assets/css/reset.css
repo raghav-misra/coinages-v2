@@ -37,6 +37,10 @@ div, header, footer, section, nav {
     margin: 0;
 }
 
+section {
+    height: 100%;
+}
+
 .mono { font-family: "Fira Code"; }
 
 .no-padding { padding: 0; }

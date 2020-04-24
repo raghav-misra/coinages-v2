@@ -15,7 +15,7 @@ const coinValues: Record<string, number> = {
 
 const store = new Vuex.Store({
     state: {
-        money: 0,
+        money: 0,   
         currentCoin: "penny"
     },
     mutations: {
@@ -23,7 +23,7 @@ const store = new Vuex.Store({
             if (amount) state.money += amount as number;
             else state.money += coinValues[state.currentCoin]; 
         },
-        
+
         loss(state, amount: number) { state.money -= amount; },
 
         changeCoin(state, newCoin) { state.currentCoin = newCoin; }

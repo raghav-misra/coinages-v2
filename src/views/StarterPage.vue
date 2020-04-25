@@ -1,9 +1,9 @@
 <template>
     <section class="no-padding">
-        <router-link :to="{ name: 'FactoryPage' }">Factory <i class="fas fa-building"></i></router-link>
-        <router-link :to="{ name: 'RnDPage' }">Laboratory <i class="fas fa-flask"></i></router-link>
+        <router-link :to="{ name: 'FactoryPage' }">Flipping Factory <i class="fas fa-building"></i></router-link>
+        <router-link :to="{ name: 'RnDPage' }">R&D Laboratory <i class="fas fa-flask"></i></router-link>
         <router-link :to="{ name: 'StockPage' }">Wall Street <i class="fas fa-traffic-light"></i></router-link>
-        <router-link :to="{ name: 'MarketingPage' }">Marketing <i class="fas fa-ad"></i></router-link>
+        <router-link :to="{ name: 'MarketingPage' }">Marketing Campaigns <i class="fas fa-ad"></i></router-link>
     </section>
 </template>
 

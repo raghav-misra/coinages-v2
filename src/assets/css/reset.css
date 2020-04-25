@@ -16,6 +16,7 @@ html { font-size: 18px; }
     text-align: center;
 }
 
+/* SPA Styles */
 html, body, #app {
     margin: 0;
     width: 100%;
@@ -26,21 +27,33 @@ html, body, #app {
     flex: 1;
 }
 
-#app > #current-view {
+#current-view {
     flex: 1;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
+#current-view > section {
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    overflow-y: auto;
+}
+
+/* Container Paddings */
 div, header, footer, section, nav {
     padding: 0.5rem;
     margin: 0;
 }
 
-section {
-    height: 100%;
-}
+/* Sizes */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
 
+/* Utils */
 .mono { font-family: "Fira Code"; }
 
 .no-padding { padding: 0; }
@@ -48,8 +61,3 @@ section {
 
 .font-weight-reg { font-weight: 400; }
 .font-weight-bold { font-weight: 700; }
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }

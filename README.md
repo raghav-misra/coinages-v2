@@ -1,24 +1,23 @@
-# coinages
+# CoinAGES:
 
-## Project setup
-```
-npm install
-```
+Based on the submission in the repl.it Game Jam, CoinAGES is a corporate simulation built with programmers in mind. Take your coin flipping company from zero, to industry domination. The highs of corporate success are addicting, until the government shuts you down. Rebuilt with a fresher UI, a deeper storyline, and much more fun, CoinAGES is guaranteed to keep you busy in quarantine. 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Play it already!
 
-### Compiles and minifies for production
-```
-npm run build
-```
+https://coinages-v2.obliviontech.dev
 
-### Lints and fixes files
-```
-npm run lint
-```
+## How does CoinAGES help you?
+- When the coin-flipping bomb explodes, you'll be poised for an executive job. 
+- When someone challenges you to a flipping battle, you'll be ready to dominate.
+- And so much more..!
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tech Stack:
+
+- **HTML, CSS** (of course)
+- **Vue**, the frontend framework.
+    - **Vue Router**, the single-page app router.
+    - **Vuex**, the state management.
+- **Typescript**, the epic language.
+- Other Stuff:
+    - Webpack
+    - Babel

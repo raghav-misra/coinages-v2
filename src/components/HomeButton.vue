@@ -27,7 +27,6 @@ div {
 a {
     font-size: 1.5rem;
     border: 2px var(--fore) solid;
-    border-radius: 50%;
     pointer-events: auto;
     padding:  0.25rem 0.125rem;
     background: var(--back);transition: background 250ms ease-in-out;

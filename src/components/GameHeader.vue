@@ -63,6 +63,5 @@ a {
 #moneyDisp {
     padding: 0.5rem;
     background: var(--success);
-    border-radius: 2rem; 
 }
 </style>

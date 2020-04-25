@@ -24,8 +24,20 @@ const store = new Vuex.Store({
             else state.money += coinValues[state.currentCoin]; 
         },
 
-        loss(state, amount: number) { state.money -= amount; },
-
+        cost(state, amount: number) { 
+            const newValue = state.money - amount; 
+            if (newValue < 0) {
+                alert("The transaction cannot be completed or else you would fall in debt.");
+                return false;
+            }
+            else { 
+                state.money -= amount; 
+                return true;  
+            }
+        },
+        loss(state, amount: number) {
+            state.money -= amount; 
+        },
         changeCoin(state, newCoin) { state.currentCoin = newCoin; }
     }
 });

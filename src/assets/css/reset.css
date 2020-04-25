@@ -1,6 +1,6 @@
 :root {
     --back: rgb(36, 43, 56);
-    --fore: white;
+    --fore: rgb(211, 219, 255);
     --accent: cornflowerblue;
     --success: rgb(23, 172, 23);
     --danger: rgb(201, 56, 56);
@@ -27,11 +27,14 @@ html, body, #app {
     flex: 1;
 }
 
+#app { overflow: hidden; }
+
 #current-view {
     flex: 1;
     margin: 0;
     padding: 0;
     position: relative;
+    overflow-y: auto;
 }
 
 #current-view > section {
@@ -58,7 +61,23 @@ hr {
     border: none;
     border-top: 0.375rem var(--accent) solid;
     margin: 1rem -0.5rem;
-    
+}
+
+hr.dark { border-color: var(--back); }
+
+/* Button */
+button, .button {
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    border: 2px solid var(--back);
+    color: var(--back);
+    background: var(--fore);
+    transition: background 0.25s ease-in, color 0.25s ease-in;
+}
+
+button:hover, .button:hover {
+    background: var(--back);
+    color: var(--fore);
 }
 
 /* Utils */
@@ -69,3 +88,10 @@ hr {
 
 .font-weight-reg { font-weight: 400; }
 .font-weight-bold { font-weight: 700; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.d-block { display: block; }
+.d-inline-block { display: inline-block; }

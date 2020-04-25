@@ -27,9 +27,11 @@ export default Vue.extend({
 
 <style scoped>
 img {
+    user-select: none;
+    padding: 0;
+    margin: 0;
     width: 12.5rem;
     height: 12.5rem;
     transition: transform 0.75s ease-in-out;
-    border-radius: 50%;
 }
 </style>

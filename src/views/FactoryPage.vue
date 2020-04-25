@@ -11,18 +11,19 @@
         <h2>Employees:</h2>
         
         <HireCard
-            :name="'Human'" :cost="100"
-            :profit="{ amount: 1, ms: 1000 }"
+            name="human" :cost="100" verb="hire"
+            :profit="{ revenue: 1, duration: 1000 }"
         />
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import PlayerCoin from '@/components/PlayerCoin.vue';
+import PlayerCoin from "@/components/PlayerCoin.vue";
+import HireCard from "@/components/HireCard.vue";
 
 export default Vue.extend({
-    components: { PlayerCoin }
+    components: { PlayerCoin, HireCard }
 });
 </script>
 

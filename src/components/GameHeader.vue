@@ -4,7 +4,7 @@
         <router-link :to="{ name: 'StarterPage' }">
             <h1 class="mono" id="title">
                 Coin
-                <img id="logo" src="@/assets/img/coins/dollar.png">
+                <img id="logo" src="/img/coins/dollar.png">
                 AGES
             </h1>
         </router-link>

@@ -30,12 +30,7 @@ import PlayerCoin from "@/components/PlayerCoin.vue";
 import HireCard from "@/components/HireCard.vue";
 
 export default Vue.extend({
-    components: { PlayerCoin, HireCard },
-    data() { 
-        return {
-            unlockedEmployees
-        };
-    }
+    components: { PlayerCoin, HireCard }
 });
 </script>
 

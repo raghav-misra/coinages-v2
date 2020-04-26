@@ -36,6 +36,8 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable no-unused-vars */
+
 import Vue from "vue";
 import WorkerInterval from "@/services/WorkerInterval";
 

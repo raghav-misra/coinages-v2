@@ -22,7 +22,23 @@ import HomeButton from "@/components/HomeButton.vue";
 import GameHeader from "@/components/GameHeader.vue";
 
 export default Vue.extend({
-    components: { HomeButton, GameHeader }
+    components: { HomeButton, GameHeader },
+
+    created() {
+        // PWA Setup Hacks:
+        if ((this as any).$workbox) {
+            (this as any).$workbox.addEventListener("waiting", () => {
+                (this as any).showUpgradeUI = true;
+            });
+        }
+    },
+
+    methods: {
+        async accept() {
+            (this as any).showUpgradeUI = false
+            await (this as any).$workbox.messageSW({ type: "SKIP_WAITING" });
+        }
+    }
 });
 </script>
 

@@ -12,7 +12,14 @@
         
         <HireCard
             name="human" :cost="100" verb="hire"
-            :profit="{ revenue: 1, duration: 1000 }"
+            :workerData="{ revenue: 1, duration: 1000 }"
+            :priceChange="10"
+        />
+        
+        <HireCard
+            name="robot" :cost="200" verb="build"
+            :workerData="{ revenue: 3, duration: 1000 }"
+            :priceChange="15"
         />
     </div>
 </template>
@@ -23,7 +30,12 @@ import PlayerCoin from "@/components/PlayerCoin.vue";
 import HireCard from "@/components/HireCard.vue";
 
 export default Vue.extend({
-    components: { PlayerCoin, HireCard }
+    components: { PlayerCoin, HireCard },
+    data() { 
+        return {
+            unlockedEmployees
+        };
+    }
 });
 </script>
 

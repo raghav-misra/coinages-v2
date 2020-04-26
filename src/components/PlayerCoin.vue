@@ -1,6 +1,6 @@
 <template>
     <img 
-        @click="profit"
+        @click="profit" @contextmenu.prevent="profit"
         :src="coinImage" alt="Click to make money!" 
         :style="{ transform: 'rotateX(' + rotationDeg + 'deg) perspective(500px)' }"
     />

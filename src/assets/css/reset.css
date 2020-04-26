@@ -59,7 +59,7 @@ h4 { font-size: 1.25rem; }
 /* Epic HR */
 hr {
     border: none;
-    border-top: 0.375rem var(--accent) solid;
+    border-top: 0.25rem var(--accent) solid;
     margin: 1rem -0.5rem;
 }
 
@@ -95,3 +95,7 @@ button:hover, .button:hover {
 
 .d-block { display: block; }
 .d-inline-block { display: inline-block; }
+
+@media only screen and (max-width: 500px) {
+    html { font-size: 16px; }
+}

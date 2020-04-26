@@ -12,3 +12,6 @@ new Vue({
     store,
     render: h => h(App)
 }).$mount("#app");
+
+// Debugging:
+(window as unknown as Record<string, unknown>)._store = () => store;

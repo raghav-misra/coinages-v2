@@ -2,31 +2,33 @@
     <div class="hire-card">
         <!-- Header -->
         <h2 class="text-left">
-            {{ name }}s - ${{ cost / 100 }}
-            <button @click="addWorker">{{ verb }} a {{ name }}</button>    
+            {{ name }}s - ${{ employeeCost / 100 }}
+            <button @click="addEmployee">{{ verb }} a {{ name }}</button>    
         </h2>
         <p class="text-left">
             Revenue Rate: 
             <span class="mono no-margin">
-                ${{ profit.revenue / 100 }} per 
-                {{ profit.duration / 1000 }}sec
+                ${{ workerData.revenue / 100 }} per 
+                {{ workerData.duration / 1000 }}sec
             </span>
         </p>
         <p class="text-left">
             # of Employees:
-            <span class="mono no-margin">{{ workers }} {{ name }}s</span>
+            <span class="mono no-margin">
+                {{ employeeAmount }} {{ name }}s
+            </span>
         </p>
         <hr>
 
         <!-- Show # of Workers -->
-        <Worker v-for="index in workers" :key="index"
+        <h1 v-for="index in employeeAmount" class="d-inline" :key="index"
             :name="name" 
-            :revenue="profit.revenue" 
-            :duration="profit.duration"
-        />
+            :revenue="workerData.revenue" 
+            :duration="workerData.duration"
+        >epic worker counter</h1>
 
         <!-- Show Message if no Workers -->
-        <p v-show="workers === 0">
+        <p v-show="employeeAmount === 0">
             no <b class="no-margin">{{ name }}s</b> yet, 
             {{ verb }} one!
         </p>
@@ -35,30 +37,50 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Worker from "@/components/Worker.vue";
-
-const cardData = {
-    
-}
+import WorkerInterval from "@/services/WorkerInterval";
 
 export default Vue.extend({
-    components: { Worker },
+    data() {
+        return {
+            employeeAmount: 0,
+            employeeCost: this.cost
+        };
+    },
+
     props: {
         name: { type: String, required: true },
         verb: { type: String, required: false, default: "build" },
         cost: { type: Number, required: true },
-        profit: { type: Object, required: true }
+        workerData: { type: Object, required: true },
+        priceChange: { type: Number, required: true }
     },
-    data() { 
-        return { workers: 0 };
-    },
+    
     methods: {
-        addWorker() { 
+        addEmployee() {
             const oldMoney = this.$store.state.money;
-            this.$store.commit("cost", this.cost);
-
-            if (oldMoney > this.$store.state.money) { this.workers++; }
+            this.$store.commit("cost", this.employeeCost);
+            if (this.$store.state.money < oldMoney) {
+                this.employeeAmount++;
+                this.employeeCost += this.priceChange;
+            }
         }
+    },
+    computed: {
+        // This returns the WorkerInterval running the employee type:
+        currentWorker(): WorkerInterval {
+            // Null check:
+            if (!this.$store.state.employeeWorkers[this.name])
+                this.$store.commit("createWorker", { ...this.workerData, name: this.name });
+            return this.$store.state.employeeWorkers[this.name] as WorkerInterval;
+        }
+    },
+    watch: {
+        employeeAmount(amount: number) { this.currentWorker.amount = amount; }
+    },
+    created() {
+        // Null check worker interval:
+        if (!this.$store.state.employeeWorkers[this.name])
+            this.$store.commit("createWorker", { ...this.workerData, name: this.name });
     }
 });
 </script>

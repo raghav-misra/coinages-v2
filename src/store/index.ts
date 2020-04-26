@@ -1,6 +1,8 @@
 import Vuex from "vuex";
 import Vue from "vue";
 
+import WorkerInterval from "@/services/WorkerInterval";
+
 Vue.use(Vuex);
 
 const coinValues: Record<string, number> = {
@@ -10,35 +12,45 @@ const coinValues: Record<string, number> = {
     quarter: 25,
     halfDollar: 50,
     dollar: 100,
-    world: 1000
+    world: 10000
 }
+
+
 
 const store = new Vuex.Store({
     state: {
         money: 0,   
-        currentCoin: "penny"
+        currentCoin: "penny",
+        employeeWorkers: Object.create(null) as Record<string, WorkerInterval>,
+        unlockedEmployees: [] as IEmployeeConfig[]
     },
     mutations: {
         profit(state, amount?: number) {
-            if (amount) state.money += amount as number;
+            if (typeof amount === "number") state.money += amount;
             else state.money += coinValues[state.currentCoin]; 
         },
 
         cost(state, amount: number) { 
             const newValue = state.money - amount; 
-            if (newValue < 0) {
+            if (newValue < 0)
                 alert("The transaction cannot be completed or else you would fall in debt.");
-                return false;
-            }
-            else { 
-                state.money -= amount; 
-                return true;  
-            }
+            else state.money -= amount; 
         },
+
         loss(state, amount: number) {
             state.money -= amount; 
         },
-        changeCoin(state, newCoin) { state.currentCoin = newCoin; }
+
+        changeCoin(state, newCoin: string) { state.currentCoin = newCoin; },
+
+        addEmployee(state, name: string) {
+            state.employeeWorkers[name].addEmployee();
+        },
+
+        createWorker(state, { name, revenue, duration }: Record<string, number>) {
+            state.employeeWorkers[name] = new WorkerInterval(revenue, duration);
+            state.employeeWorkers[name].startWork();
+        }
     }
 });
 

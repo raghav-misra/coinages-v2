@@ -10,17 +10,13 @@
 
         <h2>Employees:</h2>
         
-        <HireCard
-            name="human" :cost="100" verb="hire"
-            :workerData="{ revenue: 1, duration: 1000 }"
-            :priceChange="10"
-        />
-        
-        <HireCard
-            name="robot" :cost="200" verb="build"
-            :workerData="{ revenue: 3, duration: 1000 }"
-            :priceChange="15"
-        />
+        <div v-for="(employee, i) in unlockedEmployees" :key="i">
+            <HireCard
+                :name="employee.name" :verb="employee.verb"
+                :cost="employee.cost" :priceChange="employee.priceChange"
+                :workerData="employee.workerData"
+            />
+        </div>
     </div>
 </template>
 
@@ -30,9 +26,26 @@ import PlayerCoin from "@/components/PlayerCoin.vue";
 import HireCard from "@/components/HireCard.vue";
 
 export default Vue.extend({
-    components: { PlayerCoin, HireCard }
+    components: { PlayerCoin, HireCard },
+    data() {
+        return {
+            unlockedEmployees: [
+                {
+                    name: "human",
+                    verb: "hire",
+                    cost: 100,
+                    priceChange: 10,
+                    workerData: { revenue: 1, duration: 1000 }
+                },
+                {
+                    name: "robot",
+                    verb: "build",
+                    cost: 200,
+                    priceChange: 20,
+                    workerData: { revenue: 3, duration: 1000 }
+                }
+            ]
+        };
+    }
 });
 </script>
-
-<style scoped>
-</style>

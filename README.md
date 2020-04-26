@@ -1,6 +1,8 @@
 # CoinAGES:
 
-Based on the submission in the repl.it Game Jam, CoinAGES is a corporate simulation built with programmers in mind. Take your coin flipping company from zero, to industry domination. The highs of corporate success are addicting, until the government shuts you down. Rebuilt with a fresher UI, a deeper storyline, and much more fun, CoinAGES is guaranteed to keep you busy in quarantine. 
+Based on the submission in the repl.it Game Jam, CoinAGES is a corporate simulation built with programmers in mind. Take your coin flipping company from zero, to industry domination. The highs of corporate success are addicting, until the government shuts you down. 
+
+Rebuilt with a fresher UI, a deeper storyline, and much more fun, CoinAGES is guaranteed to keep you busy in quarantine. 
 
 ## Play it already!
 

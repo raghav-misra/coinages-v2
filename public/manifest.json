@@ -1,6 +1,7 @@
 {
     "name": "CoinAGES",
     "short_name": "CoinAGES",
+
     "icons": [
         {
             "src": "/img/icons/icon-72x72.png",

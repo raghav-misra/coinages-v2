@@ -1,12 +1,12 @@
-const staticCacheName = "coinages-cache";
 const assets = [
     "/",
     "/index.html",
-    "/assets/js/ui.js",
-    "/assets/css/main.css",
-    "/assets/images/background-home.jpg",
-    "https://fonts.googleapis.com/css?family=Lato:300,400,700",
+    "/js/chunk-vendors.js",
+    "/js/app.js"
 ];
+
+const staticCacheName = "coinages-cache";
+
 // install event
 self.addEventListener("install", evt => {
     evt.waitUntil(

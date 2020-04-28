@@ -81,7 +81,7 @@ button:hover, .button:hover {
 }
 
 /* Utils */
-.mono { font-family: "Fira Code"; }
+.mono, code, kbd { font-family: "Fira Code", monospace; }
 
 .no-padding { padding: 0; }
 .no-margin { margin: 0; }

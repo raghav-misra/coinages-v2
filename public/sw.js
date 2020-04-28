@@ -2,7 +2,7 @@ const assets = [
     "/",
     "/index.html",
     "/js/chunk-vendors.js",
-    "/js/app.js"
+    "/css/app.css"
 ];
 
 const staticCacheName = "coinages-cache";

@@ -1,3 +1,5 @@
+const version = 1;
+
 const assets = [
     "/",
     "/index.html",
@@ -5,7 +7,7 @@ const assets = [
     "/css/app.css"
 ];
 
-const staticCacheName = "coinages-cache";
+const staticCacheName = `coinages-cache-v-${version}`;
 
 // install event
 self.addEventListener("install", evt => {
